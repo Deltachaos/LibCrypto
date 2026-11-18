@@ -11,6 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Lua 5.1
-        run: sudo apt-get update && sudo apt-get install -y lua5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1 subversion
+      - name: Fetch LibStub
+        run: svn checkout --non-interactive svn://svn.wowace.com/wow/libstub/mainline/trunk LibStub
       - name: Run tests
         run: lua5.1 tests/test_crypto.lua
+
+  package:
+    name: Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: BigWigsMods/packager@v2
+        with:
+          args: -d

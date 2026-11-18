@@ -69,7 +69,7 @@ local function loadXml(name)
     end
 end
 
-loadFrom("libs/LibStub/LibStub.lua")
+loadFrom("LibStub/LibStub.lua")
 loadXml("LibCrypto.xml")
 local Crypto = LibStub("LibCrypto-1.0")
 

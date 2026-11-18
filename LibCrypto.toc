@@ -5,5 +5,5 @@
 ## Version: 1.0.0
 ## LoadOnDemand: 1
 
-libs/LibStub/LibStub.lua
+LibStub/LibStub.lua
 LibCrypto.xml
