@@ -6,4 +6,4 @@
 ## LoadOnDemand: 1
 
 LibStub/LibStub.lua
-LibCrypto.xml
+lib.xml
