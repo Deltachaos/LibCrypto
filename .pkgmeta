@@ -5,6 +5,10 @@ externals:
     url: https://github.com/WoWUIDev/Ace3
     branch: master
     path: LibStub
+  LibUnitWow:
+    url: https://github.com/Deltachaos/LibUnitWow
+    branch: main
 
 ignore:
   - tests
+  - LibUnitWow

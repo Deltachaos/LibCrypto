@@ -90,7 +90,7 @@ Base64 uses the standard alphabet and `=` padding.
 ## Tests
 
 ```
-lua5.1 tests/test_crypto.lua
+lua5.1 ../LibUnitWow/run.lua
 ```
 
-The suite checks the public API against RFC 7693, RFC 8439, RFC 7748, and the XChaCha draft, and it checks the 32-bit shifts that are not exact if a full word is multiplied in a Lua double. GitHub Actions builds the addon with the BigWigs packager and runs this file against the unpacked zip.
+The suite checks the public API against RFC 7693, RFC 8439, RFC 7748, and the XChaCha draft, and it checks the 32-bit shifts that are not exact if a full word is multiplied in a Lua double. `Test.suite("LibCrypto", "crypto")` registers it with LibUnitWow. GitHub Actions builds the addon with the BigWigs packager and runs `LibUnitWow/run.lua` against the unpacked zip. The release package leaves LibUnitWow out.

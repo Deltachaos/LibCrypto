@@ -26,4 +26,5 @@ jobs:
           test -n "$zipfile"
           rm -rf "${RUNNER_TEMP}/pkg"
           unzip -q "$zipfile" -d "${RUNNER_TEMP}/pkg"
-          lua5.1 "${RUNNER_TEMP}/pkg/LibCrypto/tests/test_crypto.lua"
+          cd "${RUNNER_TEMP}/pkg/LibCrypto"
+          lua5.1 LibUnitWow/run.lua
