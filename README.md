@@ -10,7 +10,7 @@ The algorithms come from [pure-lua-5.1-crypto](https://github.com/BernhardZat/pu
 ## Dependencies: LibCrypto
 ```
 
-The BigWigs packager reads `.pkgmeta` and fetches LibStub. The TOC loads `LibStub/LibStub.lua` before the library.
+The BigWigs packager reads `.pkgmeta` and fetches LibStub into `Libs/LibStub`. The TOC loads `Libs/LibStub/LibStub.lua` before the library.
 
 ```lua
 local Crypto = LibStub("LibCrypto-1.0")
@@ -93,4 +93,4 @@ Base64 uses the standard alphabet and `=` padding.
 lua5.1 ../LibUnitWow/run.lua
 ```
 
-The suite checks the public API against RFC 7693, RFC 8439, RFC 7748, and the XChaCha draft, and it checks the 32-bit shifts that are not exact if a full word is multiplied in a Lua double. `Test.suite("LibCrypto", "crypto")` registers it with LibUnitWow. GitHub Actions builds the addon with the BigWigs packager and runs `LibUnitWow/run.lua` against the unpacked zip. The release package leaves LibUnitWow out.
+The suite checks the public API against RFC 7693, RFC 8439, RFC 7748, and the XChaCha draft, and it checks the 32-bit shifts that are not exact if a full word is multiplied in a Lua double. `Test.suite("LibCrypto", "crypto")` registers it with LibUnitWow. GitHub Actions builds the addon with the BigWigs packager and runs `Libs/LibUnitWow/run.lua` against the unpacked zip. The release package leaves LibUnitWow out.

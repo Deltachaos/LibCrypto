@@ -5,5 +5,5 @@
 ## Version: 1.0.0
 ## LoadOnDemand: 1
 
-LibStub/LibStub.lua
+Libs/LibStub/LibStub.lua
 lib.xml

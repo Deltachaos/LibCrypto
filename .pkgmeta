@@ -1,14 +1,14 @@
 package-as: LibCrypto
 
 externals:
-  LibStub:
+  Libs/LibStub:
     url: https://github.com/WoWUIDev/Ace3
     branch: master
     path: LibStub
-  LibUnitWow:
+  Libs/LibUnitWow:
     url: https://github.com/Deltachaos/LibUnitWow
     branch: main
 
 ignore:
   - tests
-  - LibUnitWow
+  - Libs/LibUnitWow
