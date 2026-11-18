@@ -1,0 +1,15 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="LibCrypto.lua"/>
+	<Script file="util/bitops.lua"/>
+	<Script file="util/misc.lua"/>
+	<Script file="util/base64.lua"/>
+	<Script file="crypto/blake2s.lua"/>
+	<Script file="crypto/chacha20core.lua"/>
+	<Script file="crypto/chacha20.lua"/>
+	<Script file="crypto/xchacha20.lua"/>
+	<Script file="crypto/chacha20rng.lua"/>
+	<Script file="crypto/hkdf.lua"/>
+	<Script file="crypto/x25519.lua"/>
+	<Script file="Api.lua"/>
+</Ui>

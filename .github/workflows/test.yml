@@ -1,0 +1,16 @@
+name: LibCrypto
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Lua 5.1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Run tests
+        run: lua5.1 tests/test_crypto.lua
