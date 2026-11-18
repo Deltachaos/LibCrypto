@@ -93,4 +93,4 @@ Base64 uses the standard alphabet and `=` padding.
 lua5.1 tests/test_crypto.lua
 ```
 
-The suite checks the public API against RFC 7693, RFC 8439, RFC 7748, and the XChaCha draft, and it checks the 32-bit shifts that are not exact if a full word is multiplied in a Lua double. GitHub Actions checks out LibStub, then runs the same command on Ubuntu with Lua 5.1.
+The suite checks the public API against RFC 7693, RFC 8439, RFC 7748, and the XChaCha draft, and it checks the 32-bit shifts that are not exact if a full word is multiplied in a Lua double. GitHub Actions builds the addon with the BigWigs packager and runs this file against the unpacked zip.

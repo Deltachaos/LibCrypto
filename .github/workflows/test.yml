@@ -10,20 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Lua 5.1
-        run: sudo apt-get update && sudo apt-get install -y lua5.1 subversion
-      - name: Fetch LibStub
-        run: svn checkout --non-interactive svn://svn.wowace.com/wow/libstub/mainline/trunk LibStub
-      - name: Run tests
-        run: lua5.1 tests/test_crypto.lua
-
-  package:
-    name: Package
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Install Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Keep tests in the package
+        run: sed -i '/^ignore:/,$d' .pkgmeta
       - uses: BigWigsMods/packager@v2
         with:
           args: -d
+      - name: Test the package
+        run: |
+          set -euo pipefail
+          zipfile=$(find .release -maxdepth 1 -type f -name '*.zip' ! -name '*nolib*' -print -quit)
+          test -n "$zipfile"
+          rm -rf "${RUNNER_TEMP}/pkg"
+          unzip -q "$zipfile" -d "${RUNNER_TEMP}/pkg"
+          lua5.1 "${RUNNER_TEMP}/pkg/LibCrypto/tests/test_crypto.lua"
